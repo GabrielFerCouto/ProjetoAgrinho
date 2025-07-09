@@ -1,0 +1,279 @@
+/* style.css */
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Um fundo suave para o corpo */
+}
+
+.container {
+    width: 90%; /* Ajustado para melhor responsividade */
+    max-width: 1200px; /* Largura máxima para telas maiores */
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: #4CAF50; /* Verde vibrante do campo */
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em; /* Tamanho maior para o título principal */
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* --- Navegação (Nav) --- */
+nav {
+    background-color: #2c3e50; /* Um azul escuro para contraste */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para centralizar e espaçar itens de menu */
+    justify-content: center;
+    flex-wrap: wrap; /* Para quebra de linha em telas pequenas */
+}
+
+nav ul li {
+    margin: 0 20px; /* Mais espaçamento entre os itens */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transição suave */
+}
+
+nav ul li a:hover {
+    color: #FFC107; /* Amarelo de destaque ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* --- Seção Principal (Hero Section) --- */
+.hero-section {
+    background-image: url('https://via.placeholder.com/1500x500/8BC34A/FFFFFF?text=Sua+Imagem+Principal+Aqui'); /* Exemplo com cor mais suave */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Mais padding para maior impacto */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Sombra mais forte para o texto */
+    display: flex; /* Para centralizar verticalmente o conteúdo */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-section h2 {
+    font-size: 3.5em; /* Tamanho maior */
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    background-color: #FFC107; /* Amarelo vibrante */
+    color: #333;
+    padding: 12px 25px; /* Botão um pouco maior */
+    text-decoration: none;
+    border-radius: 8px; /* Cantos mais arredondados */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição para hover */
+}
+
+.btn:hover {
+    background-color: #e0a800; /* Tom mais escuro no hover */
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+/* --- Seções de Conteúdo (Sections) --- */
+.section {
+    padding: 60px 0; /* Mais padding para espaçamento */
+    border-bottom: 1px solid #eee;
+    background-color: white; /* Fundo branco para seções */
+    margin-bottom: 20px; /* Espaço entre seções */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.section:last-of-type {
+    border-bottom: none; /* Remover borda da última seção */
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #4CAF50;
+    position: relative; /* Para o underline animado */
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #FFC107;
+    border-radius: 2px;
+}
+
+/* --- Grid de Itens (Grid Container) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustado minmax */
+    gap: 30px; /* Mais espaçamento entre os itens do grid */
+    padding: 0 20px; /* Padding interno para o grid */
+}
+
+.grid-item {
+    background-color: #ffffff; /* Fundo branco para os itens */
+    padding: 30px;
+    border-radius: 10px; /* Cantos mais arredondados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra mais pronunciada */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra mais intensa */
+}
+
+.grid-item h3 {
+    color: #4CAF50;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.grid-item p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* --- Seção de Contato (Contact Section) --- */
+#contato p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+#contato a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contato a:hover {
+    color: #388E3C; /* Tom mais escuro de verde no hover */
+    text-decoration: underline;
+}
+
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: #2c3e50; /* Mesmo azul escuro da navegação */
+    color: white;
+    text-align: center;
+    padding: 25px 0; /* Mais padding */
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .hero-section {
+        padding: 60px 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+        display: block; /* Cada item em uma nova linha */
+        padding: 5px 0;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        padding: 0 15px;
+    }
+
+    .grid-item {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+}
