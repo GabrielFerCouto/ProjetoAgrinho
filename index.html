@@ -5,115 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do Campo ou da Cidade para a Sua Mesa: Inovação e Responsabilidade</title>
-    <style>
-        /* Estilos CSS básicos para uma apresentação inicial.
-           Você pode mover estes estilos para um arquivo .css separado para melhor organização. */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #4CAF50; /* Um verde que remete ao campo */
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 0.8em 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px 0;
-        }
-        .hero-section {
-            background-image: url('https://via.placeholder.com/1500x500?text=Sua+Imagem+Principal+Aqui'); /* Substitua por uma imagem relevante */
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-        .hero-section h2 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-        .hero-section p {
-            font-size: 1.2em;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-        .btn {
-            background-color: #FFC107; /* Um amarelo para destaque */
-            color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background-color: #e0a800;
-        }
-        .section {
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #4CAF50;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .grid-item {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
 </head>
+<script src="script.js"></script>
 <body>
 
     <header>
@@ -130,8 +23,7 @@
                 <li><a href="#nossa-missao">Nossa Missão</a></li>
                 <li><a href="#inovacao">Inovação</a></li>
                 <li><a href="#responsabilidade">Responsabilidade</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+                <li><a href="#galeria">Galeria</a></li> <li><a href="#formulario-contato">Contato</a></li> </ul>
         </div>
     </nav>
 
@@ -189,6 +81,63 @@
                         <p>Priorizamos a segurança alimentar, com rigorosos controles de qualidade para garantir que cada produto atenda aos mais altos padrões.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="galeria" class="section">
+            <div class="container">
+                <h2>Nossos Produtos e Processos em Imagens</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Produto+Fresco+1" alt="Produto Fresco 1">
+                        <p>Vegetais colhidos na hora</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Processo+Inovador+2" alt="Processo Inovador 2">
+                        <p>Tecnologia na classificação</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Entrega+Responsavel+3" alt="Entrega Responsável 3">
+                        <p>Entrega sustentável</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Cultivo+Urbano+4" alt="Cultivo Urbano 4">
+                        <p>Hortas urbanas inovadoras</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Produtor+Parceiro+5" alt="Produtor Parceiro 5">
+                        <p>Nossos produtores parceiros</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=Mesa+Saudavel+6" alt="Mesa Saudável 6">
+                        <p>A qualidade na sua mesa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formulario-contato" class="section">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto">Assunto:</label>
+                        <input type="text" id="assunto" name="assunto">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                    <p id="form-message" class="hidden"></p>
+                </form>
             </div>
         </section>
 
