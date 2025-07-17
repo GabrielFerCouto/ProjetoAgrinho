@@ -9,47 +9,42 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (event) => {
             event.preventDefault(); // Impede o envio padrão do formulário
 
-            // Em um site real, você enviaria esses dados para um servidor
-            // Usaremos um simulação de sucesso/erro aqui
-
             const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const assunto = document.getElementById('assunto').value;
-            const mensagem = document.getElementById('mensagem').value;
-
+            // ... (restante do código do formulário)
+            
             // Simula um envio assíncrono (como se estivesse enviando para um servidor)
             setTimeout(() => {
                 const isSuccess = Math.random() > 0.3; // 70% de chance de sucesso
 
                 if (isSuccess) {
                     formMessage.textContent = `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`;
-                    formMessage.className = 'success'; // Adiciona classe para estilização
-                    contactForm.reset(); // Limpa o formulário
+                    formMessage.className = 'success';
+                    contactForm.reset();
                 } else {
                     formMessage.textContent = 'Houve um erro ao enviar sua mensagem. Tente novamente.';
-                    formMessage.className = 'error'; // Adiciona classe para estilização
+                    formMessage.className = 'error';
                 }
-                formMessage.classList.remove('hidden'); // Mostra a mensagem
-            }, 1500); // Espera 1.5 segundos para simular o envio
+                formMessage.classList.remove('hidden');
+            }, 1500);
         });
     }
 
     // --- 2. Animação de rolagem (Scroll Reveal) ---
     const fadeInElements = document.querySelectorAll('.fade-in');
-    const animatedGridItems = document.querySelectorAll('.grid-item, .gallery-item'); // Seleciona itens de grid e galeria
+    const animatedGridItems = document.querySelectorAll('.grid-item, .gallery-item');
 
     const observerOptions = {
-        root: null, // Observa o viewport
+        root: null,
         rootMargin: '0px',
-        threshold: 0.1 // 10% do elemento visível
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('appear'); // Adiciona classe para fade-in
-                entry.target.classList.add('visible'); // Adiciona classe para animação do grid
-                observer.unobserve(entry.target); // Para de observar depois que aparece
+                entry.target.classList.add('appear');
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -61,13 +56,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Navegação Fixa (Sticky Nav) ---
     const nav = document.querySelector('nav');
     const header = document.querySelector('header');
-    const navHeight = nav.offsetHeight;
-    const headerHeight = header.offsetHeight;
+    let navHeight = nav.offsetHeight; // Captura a altura inicial da nav
+
+    // Atualiza a altura da nav caso ela mude (por exemplo, em mobile onde ela quebra)
+    const updateNavHeight = () => {
+        navHeight = nav.offsetHeight;
+        if (window.scrollY > header.offsetHeight) {
+            document.body.style.paddingTop = navHeight + 'px';
+        }
+    };
+
+    // Observa mudanças na altura da nav (ex: devido a media queries)
+    const resizeObserver = new ResizeObserver(updateNavHeight);
+    resizeObserver.observe(nav);
+
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > headerHeight) {
+        if (window.scrollY > header.offsetHeight) {
             nav.classList.add('sticky-nav');
-            // Adiciona um padding ao body para o conteúdo não "pular"
+            // Garante que o padding seja aplicado corretamente após a nav ficar sticky
             document.body.style.paddingTop = navHeight + 'px';
         } else {
             nav.classList.remove('sticky-nav');
@@ -84,8 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
+                // Usa a altura atual da nav para o offset da rolagem
+                const offsetTop = targetElement.offsetTop - navHeight - 20; // Ajusta para a altura da nav + um pouco
                 window.scrollTo({
-                    top: targetElement.offsetTop - (navHeight + 20), // Ajusta para a altura da nav + um pouco
+                    top: offsetTop,
                     behavior: 'smooth'
                 });
             }
@@ -93,10 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 5. Adicionando classes de animação aos elementos existentes ---
-    // Isso é útil para aplicar a animação aos elementos já presentes no HTML
-    // que queremos que apareçam com scroll-reveal.
-    // Faça isso logo no carregamento ou quando o elemento for gerado.
-    document.querySelectorAll('.section h2, .section p, .btn').forEach(el => {
+    document.querySelectorAll('.section h2, .section p, .btn, #contact-form').forEach(el => {
         el.classList.add('fade-in');
     });
 });
